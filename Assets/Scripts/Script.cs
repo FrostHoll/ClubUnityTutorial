@@ -9,7 +9,7 @@ public class Script : MonoBehaviour
     float speed = 5f;
 
     Light halo;
-
+     
     void Start()
     {
         halo = GetComponent<Light>();
@@ -18,13 +18,15 @@ public class Script : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.A) && isSelected)
+        float xAxis = Input.GetAxis("Horizontal");
+        float zAxis = Input.GetAxis("Vertical");
+        if (xAxis != 0 && isSelected)
         {
-            transform.Translate(speed * Time.deltaTime * Vector3.left);
+            Move(new Vector3(xAxis, 0f, 0f));
         }
-        if (Input.GetKey(KeyCode.D) && isSelected)
+        if (zAxis != 0 && isSelected)
         {
-            transform.Translate(speed * Time.deltaTime * Vector3.right);
+            Move(new Vector3(0f, 0f, zAxis));
         }
         if (Input.GetKeyDown(KeyCode.Space) && isSelected)
         {
@@ -32,7 +34,17 @@ public class Script : MonoBehaviour
         }
     }
 
+    private void Move(Vector3 directon)
+    {
+        transform.Translate(speed * Time.deltaTime * directon);
+    }
+
     void OnMouseDown()
+    {
+        CameraMotion.Target = this;
+    }
+
+    public void ToogleSelected()
     {
         isSelected = !isSelected;
         halo.enabled = isSelected;

@@ -253,7 +253,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 0.983102, b: 0, a: 1}
+  m_Color: {r: 0.9160466, g: 1, b: 0, a: 1}
   m_Intensity: 1
   m_Range: 2
   m_SpotAngle: 30
@@ -315,6 +315,7 @@ GameObject:
   - component: {fileID: 754948633}
   - component: {fileID: 754948632}
   - component: {fileID: 754948631}
+  - component: {fileID: 754948634}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -396,6 +397,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 28.526, y: 0, z: 0}
+--- !u!114 &754948634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754948630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d29ddbcfdd987f439eecb92969f81ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &855469310
 GameObject:
   m_ObjectHideFlags: 0
