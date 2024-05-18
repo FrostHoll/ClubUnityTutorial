@@ -9,14 +9,17 @@ public class Script : MonoBehaviour
     float speed = 5f;
 
     Light halo;
+
+    private Rigidbody rb;
      
     void Start()
     {
         halo = GetComponent<Light>();
         halo.enabled = false;
+        rb = GetComponent<Rigidbody>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         float xAxis = Input.GetAxis("Horizontal");
         float zAxis = Input.GetAxis("Vertical");
@@ -36,7 +39,8 @@ public class Script : MonoBehaviour
 
     private void Move(Vector3 directon)
     {
-        transform.Translate(speed * Time.deltaTime * directon);
+        //transform.Translate(speed * Time.deltaTime * directon);
+        rb.MovePosition(transform.position + speed * Time.fixedDeltaTime * directon);
     }
 
     void OnMouseDown()
