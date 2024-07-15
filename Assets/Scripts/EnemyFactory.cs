@@ -47,6 +47,7 @@ public class EnemyFactory : MonoBehaviour
 
     public void Spawn()
     {
+        
         PlayerUI.instance.ShowWaveText("");
         int enemiesToSpawn = 3 + (int)(0.1f * _wave * _wave);
         PlayerUI.instance.SetWave(_wave, enemiesToSpawn);

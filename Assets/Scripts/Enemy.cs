@@ -66,7 +66,7 @@ public class Enemy : MonoBehaviour, IDamageable
         s_player.GainEXP(_enemyData.Experience);
         if (Random.Range(0, 100) <= 10)
             Instantiate(_healthKit, transform.position, Quaternion.identity);
-        died?.Invoke(this);
+        died.Invoke(this);
         Destroy(gameObject);
     }
 

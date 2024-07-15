@@ -43,11 +43,6 @@ public class PlayerUI : MonoBehaviour
         instance = this;
     }
 
-    public void Init()
-    {
-        
-    }
-
     public void SetHPBar(int hp, int maxHP)
     {
         _hpBarText.text = $"Çהמנמגüו: {hp} / {maxHP}";
